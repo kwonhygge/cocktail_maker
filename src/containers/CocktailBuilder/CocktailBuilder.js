@@ -4,9 +4,9 @@ import Cocktail from "../../components/Cocktail/Cocktail"
 class CocktailBuilder extends Component{
     state={
         ingredients:{
-            sourmix:3,
-            cranberry:1,
-            peachliquor:1
+            sourmix:0,
+            cranberry:0,
+            peachliquor:0
         }
     }
 
