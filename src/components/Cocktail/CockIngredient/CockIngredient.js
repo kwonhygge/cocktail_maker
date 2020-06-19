@@ -7,8 +7,14 @@ class CockIngredient extends Component{
         let ingredient = null;
 
         switch(this.props.type){
-            case("ice-cube"):
-                ingredient=<div className={styles.IceCube}></div>
+            case("sourmix"):
+                ingredient=<div className={styles.SourMix}></div>
+                break;
+            case("cranberry"):
+                ingredient=<div className={styles.CranBerry}></div>
+                break;
+            case("peachliquor"):
+                ingredient=<div className={styles.PeachLiquor}></div>
                 break;
             default:
                 ingredient=null;

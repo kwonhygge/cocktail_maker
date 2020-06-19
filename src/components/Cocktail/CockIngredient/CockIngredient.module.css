@@ -1,5 +1,18 @@
-.IceCube{
-    width: 25px;
-    height: 25px;
-    background-color: aqua;
+.SourMix{
+    width:100%;
+    height:50px;
+    background: orange;
+}
+
+.CranBerry{
+    width:100%;
+    height:50px;
+    background: #E33967;
+}
+
+.PeachLiquor{
+    width:100%;
+    height:50px;
+    background: #DDDCD6;
+    opacity: .7;
 }

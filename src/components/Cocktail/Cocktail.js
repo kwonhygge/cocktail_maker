@@ -3,9 +3,23 @@ import classes from "./Cocktail.module.css"
 import CockIngredient from "./CockIngredient/CockIngredient"
 
 const cocktail = (props) => {
+    let transformedIngredient=Object.keys(props.ingredients)
+    .map(igKey=>{
+        return [...Array(props.ingredients[igKey])].map(
+            ((_,i)=>{
+                return <CockIngredient key={igKey+i} type={igKey} />
+            })
+        )
+    }).reduce((arr,el)=>{
+        return arr.concat(el)
+    },[]);
+
+
+
+
     return (
         <div className={classes.Cocktail}>
-            <CockIngredient type="ice-cube"/>
+            {transformedIngredient}
         </div>
     )
 }
