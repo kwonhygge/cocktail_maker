@@ -1,5 +1,5 @@
 .Cocktail{
-    width: 200px;
+    width: 300px;
     height: 300px;
     margin: auto;
     overflow: scroll;
@@ -14,4 +14,25 @@
     border-color: rgba(255,255,255,.7); 
     background: rgba(255,255,255,.1);
     border-radius: 0% 0% 15% 15%;
+}
+
+@media(min-width: 500px) and (min-height: 400px){
+    .Cocktail{
+        width: 300px;
+        height: 330px;
+    }
+}
+
+@media(min-width: 500px) and (min-height: 401px){
+    .Cocktail{
+        width: 320px;
+        height: 350px;
+    }
+}
+
+@media(min-width: 1000px) and (min-height: 700px){
+    .Cocktail{
+        width: 400px;
+        height: 500px;
+    }
 }

@@ -1,5 +1,6 @@
 .Content{
-    margin-top: 16px;
+    margin: 16px 20px;
+    width: 800px;
 }
 body{
     background-color: gray;
