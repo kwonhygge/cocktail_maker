@@ -21,7 +21,8 @@ const buildControls = (props) => (
              />
         ))}
         <button className={styles.ShakeButton}
-                disabled = {!props.shakable}>SHAKE</button>
+                disabled = {!props.shakable}
+                onClick={props.shakeClicked}>SHAKE</button>
     </div>
 );
 

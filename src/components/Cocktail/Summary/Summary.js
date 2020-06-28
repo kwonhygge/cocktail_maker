@@ -4,16 +4,17 @@ const summary = (props) =>{
     const ingredientSummary = Object.keys(props.ingredients)
     .map(igKey => {
         return <li key={igKey}>
-            <span>{igKey}</span> : {props.ingredients[igKey]}
+            <span>{igKey}</span> : {props.ingredients[igKey]} oz
         </li>
     });
     return(
         <>
-            <h3>Your Choice</h3>
+            <h3>{props.foundRecipe}</h3>
             <ul>
                 {ingredientSummary}
             </ul>
-            <p>Continue to checkout?</p>
+            <p>Continue to Make?</p>
+        
         </>
     )
 }

@@ -12,8 +12,11 @@ class CocktailBuilder extends Component{
             cranberry:0,
             peachliquor:0
         },
-        shakable:false
+        shakable:false,
+        checking:false,
+        foundRecipe:"일치하는 레시피없음"
     }
+
 
     addIngredientHandler = type => {
         const updatedIngredients = {...this.state.ingredients};
@@ -54,6 +57,33 @@ class CocktailBuilder extends Component{
         this.setState({shakable: sum>0})
       }
 
+      shakeHandler = () => {
+          this.setState({checking:true});
+          this.checkRecipe();
+      }
+
+      checkRecipe = () => {
+        const recipes = [{PeachCrush:{
+            sourmix:2,
+            cranberry:2,
+            peachliquor:1
+        }}
+        ]
+        
+        for (let i in recipes){
+            let foundRecipe=""
+
+            const array=Object.keys(recipes[i]).map(key=>{
+                foundRecipe=key
+                return recipes[i][key]
+            })
+
+            if (JSON.stringify(array[0])===JSON.stringify(this.state.ingredients)){
+                this.setState({foundRecipe:foundRecipe})
+            }
+        }
+      }
+
     render(){
         const disabledInfo={
             ...this.state.ingredients
@@ -63,8 +93,10 @@ class CocktailBuilder extends Component{
         }
         return(
             <>
-                <Modal>
-                    <Summary ingredients={this.state.ingredients}/>
+                <Modal show={this.state.checking}>
+                    <Summary 
+                    ingredients={this.state.ingredients}
+                    foundRecipe={this.state.foundRecipe}/>
                 </Modal>
                 <Cocktail ingredients={this.state.ingredients}/>
                 <BuildControls 
@@ -72,6 +104,8 @@ class CocktailBuilder extends Component{
                 ingredientRemoved={this.removeIngredientHandler}
                 disabled={disabledInfo}
                 shakable={this.state.shakable}
+                shakeClicked={this.shakeHandler}
+                
                 />
                 <Recipes />
             </>
