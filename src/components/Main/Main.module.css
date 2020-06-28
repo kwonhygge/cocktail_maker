@@ -1,0 +1,60 @@
+.Main{
+    min-height: 700px;
+    background: #297C56;
+}
+.TitleContainer{
+    height: 562px;
+    display: flex;
+    justify-content: space-between;
+}
+.TitleContainer img{
+    height: 80%;
+}
+.Title{
+    color:white;
+    transform: rotate(-20deg);
+    font-size: 120px;
+    font-weight: bold;
+    padding-left: 40px;
+    padding-top: 80px;
+}
+.StartBtnContainer{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.StartBtnContainer img{
+    width:50px;
+    height:50px;
+}
+.StartBtn{
+    color:white;
+    font-size: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.StartBtn:hover{
+    color: #10BB67;
+}
+.StartBtnContainer:hover,
+.StartBtnContainer:focus {
+    animation: maracasShake 1s linear infinite;
+}
+
+@keyframes maracasShake{
+
+    0% { transform: translate(2px, 1px) rotate(5deg); }
+    10%{transform: translate(1px, 2px) rotate(-3deg);}
+    20% { transform: translate(1px, 2px) rotate(3deg); }
+    30% { transform: translate(0px, -1px) rotate(-2deg); }
+    40%{transform: translate(1px, 2px) rotate(2deg);}
+    50%{transform: translate(1px, 2px) rotate(0deg);}
+    70% { transform: translate(1px, 1px) rotate(-1deg); }
+    70% { transform: translate(0x, 1px) rotate(2deg); }
+    80% { transform: translate(2px, -2px) rotate(-3deg); }
+	100% { transform: translate(1px, -2px) rotate(5deg); }
+
+}

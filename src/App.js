@@ -1,14 +1,24 @@
 import React from 'react';
 import Layout from "./components/Layout/Layout"
-import CocktailBuilder from "./containers/CocktailBuilder/CocktailBuilder"
+import CocktailBuilder from "./containers/CocktailBuilder/CocktailBuilder";
+import Main from "./components/Main/Main";
+import {HashRouter, Route} from "react-router-dom";
 
 function App() {
-  return (
-    <div>
+  const Create = () => (
+    <>
       <Layout>
         <CocktailBuilder />
       </Layout>
-    </div>
+    </>
+  )
+  return (
+    <HashRouter>
+      <Route path="/" component={Main} exact={true}/>
+      <Route path="/create" component={Create} />
+    </HashRouter>
+      
+    
   );
 }
 
