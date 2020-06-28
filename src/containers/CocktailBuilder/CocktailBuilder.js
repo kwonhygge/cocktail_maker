@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import Cocktail from "../../components/Cocktail/Cocktail"
 import BuildControls from "../../components/Cocktail/BuildControls/BuildControls"
+import Recipes from "../../components/Cocktail/Recipes/Recipes";
 
 class CocktailBuilder extends Component{
     state={
@@ -8,7 +9,8 @@ class CocktailBuilder extends Component{
             sourmix:0,
             cranberry:0,
             peachliquor:0
-        }
+        },
+        shakable:false
     }
 
     addIngredientHandler = type => {
@@ -37,6 +39,20 @@ class CocktailBuilder extends Component{
 
     }
 
+    updateShakeState (){
+        const ingredients = {
+          ...this.state.ingredients
+        };
+        const sum = Object.keys(ingredients)
+        .map(igKey => {
+          return ingredients[igKey]
+        }).reduce((sum,el)=>{
+            return sum+el
+        },0)
+  
+        this.setState({shakable: sum>0})
+      }
+
     render(){
         const disabledInfo={
             ...this.state.ingredients
@@ -52,6 +68,7 @@ class CocktailBuilder extends Component{
                 ingredientRemoved={this.removeIngredientHandler}
                 disabled={disabledInfo}
                 />
+                <Recipes />
             </>
         )
     }
