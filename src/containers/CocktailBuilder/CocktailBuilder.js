@@ -2,6 +2,8 @@ import React,{Component} from "react";
 import Cocktail from "../../components/Cocktail/Cocktail"
 import BuildControls from "../../components/Cocktail/BuildControls/BuildControls"
 import Recipes from "../../components/Cocktail/Recipes/Recipes";
+import Modal from "../../components/UI/Modal/Modal";
+import Summary from "../../components/Cocktail/Summary/Summary";
 
 class CocktailBuilder extends Component{
     state={
@@ -22,6 +24,7 @@ class CocktailBuilder extends Component{
                 ingredients: updatedIngredients
             }
         })
+        this.updateShakeState(updatedIngredients);
     }
 
     removeIngredientHandler = type => {
@@ -36,13 +39,11 @@ class CocktailBuilder extends Component{
                 ingredients: updatedIngredients
             }
         })
+        this.updateShakeState(updatedIngredients);
 
     }
 
-    updateShakeState (){
-        const ingredients = {
-          ...this.state.ingredients
-        };
+    updateShakeState (ingredients){
         const sum = Object.keys(ingredients)
         .map(igKey => {
           return ingredients[igKey]
@@ -62,11 +63,15 @@ class CocktailBuilder extends Component{
         }
         return(
             <>
+                <Modal>
+                    <Summary ingredients={this.state.ingredients}/>
+                </Modal>
                 <Cocktail ingredients={this.state.ingredients}/>
                 <BuildControls 
                 ingredientAdded={this.addIngredientHandler}
                 ingredientRemoved={this.removeIngredientHandler}
                 disabled={disabledInfo}
+                shakable={this.state.shakable}
                 />
                 <Recipes />
             </>
