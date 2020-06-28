@@ -14,7 +14,7 @@ class CocktailBuilder extends Component{
         },
         shakable:false,
         checking:false,
-        foundRecipe:"일치하는 레시피없음"
+        foundRecipe:""
     }
 
 
@@ -61,6 +61,10 @@ class CocktailBuilder extends Component{
           this.setState({checking:true});
           this.checkRecipe();
       }
+      shakeCancelHandler = () => {
+        this.setState({checking:false});
+      }
+
 
       checkRecipe = () => {
         const recipes = [{PeachCrush:{
@@ -84,6 +88,10 @@ class CocktailBuilder extends Component{
         }
       }
 
+      shakeContinueHandler = () => {
+        alert("You continue!");
+      }
+
     render(){
         const disabledInfo={
             ...this.state.ingredients
@@ -93,10 +101,12 @@ class CocktailBuilder extends Component{
         }
         return(
             <>
-                <Modal show={this.state.checking}>
+                <Modal show={this.state.checking} modalClosed={this.shakeCancelHandler}>
                     <Summary 
                     ingredients={this.state.ingredients}
-                    foundRecipe={this.state.foundRecipe}/>
+                    foundRecipe={this.state.foundRecipe}
+                    shakeCanceled={this.shakeCancelHandler}
+                    shakeContinued={this.shakeContinueHandler}/>
                 </Modal>
                 <Cocktail ingredients={this.state.ingredients}/>
                 <BuildControls 
@@ -105,6 +115,7 @@ class CocktailBuilder extends Component{
                 disabled={disabledInfo}
                 shakable={this.state.shakable}
                 shakeClicked={this.shakeHandler}
+                
                 
                 />
                 <Recipes />

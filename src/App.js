@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from "./components/Layout/Layout"
 import CocktailBuilder from "./containers/CocktailBuilder/CocktailBuilder";
 import Main from "./components/Main/Main";
+import Result from "./components/Result/Result"
 import {HashRouter, Route} from "react-router-dom";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <HashRouter>
       <Route path="/" component={Main} exact={true}/>
       <Route path="/create" component={Create} />
+      <Route path="/result" component={Result} />
     </HashRouter>
       
     
