@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../UI/Button/Button";
+import {Link} from "react-router-dom";
 const summary = (props) =>{
     const ingredientSummary = Object.keys(props.ingredients)
     .map(igKey => {
@@ -15,7 +16,18 @@ const summary = (props) =>{
             </ul>
             <p>Continue to Make?</p>
             <Button btnType="Danger" clicked={props.shakeCanceled}>CANCEL</Button>
-            <Button btnType="Success" clicked={props.shakeContinued}>CONTINUE</Button>
+            <Link to={
+                {
+                    pathname:"/result",
+                    state:{
+                        cocktail:props.foundRecipe
+                    }
+                }
+
+            }>
+                <Button btnType="Success">CONTINUE</Button>
+            </Link>
+            
         </>
     )
 }

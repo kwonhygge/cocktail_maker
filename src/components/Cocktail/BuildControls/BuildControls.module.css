@@ -1,6 +1,6 @@
 .BuildControls{
     width: 100%;
-    background-color: #CF8F2E;
+    background-color: #C99B38;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -11,11 +11,11 @@
 
 
 .ShakeButton {
-    background-color: #DAD735;
+    background-color: #FFCD61;
     outline: none;
     cursor: pointer;
     border: 1px solid #966909;
-    color: #966909;
+    color: #4A3915;
     font-family: inherit;
     font-size: 1.2em;
     padding: 15px 30px;

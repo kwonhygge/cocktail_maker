@@ -7,9 +7,9 @@ const recipe = (props) => (
         <p>
             Sourmix:2oz
             <br></br>
-            peachLiquor:1oz
-            <br></br>
             Cranberryjuice:2oz
+            <br></br>
+            peachLiquor:1oz
         </p>
     </li>
 )

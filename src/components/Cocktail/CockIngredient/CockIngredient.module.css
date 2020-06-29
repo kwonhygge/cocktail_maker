@@ -1,18 +1,18 @@
 .SourMix{
     width:100%;
-    height:50px;
-    background: orange;
+    height:100px;
+    background: #D67131;
 }
 
 .CranBerry{
     width:100%;
-    height:50px;
+    height:100px;
     background: #E33967;
 }
 
 .PeachLiquor{
     width:100%;
-    height:50px;
-    background: #DDDCD6;
+    height:100px;
+    background: #CF8787;
     opacity: .7;
 }
