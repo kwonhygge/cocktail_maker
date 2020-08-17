@@ -6,7 +6,6 @@
 ## 개발기간 : 2020.06.11 ~ 2020.06.29
 ## 개발인원 : 1명
 ## 사용 : React 라이브러리
-css 모듈
 ## 설명:
 리액트 인터넷 강의를 들으며 학습한 내용을 바탕으로 간단한 칵테일 메이커 게임을 만들어보았습니다. 주어진 레시피가 존재하고 이에 맞게 재료를 입력하면 원하는 음료를 만들 수 있습니다. 레시피에 없는 재료 조합은 failure라는 문구와 함께 먹지못하는 음료를 완성합니다.
 
@@ -24,7 +23,8 @@ css 모듈
   <tr>
     <td valign="top"><img width="1200" alt="칵메1" src="https://user-images.githubusercontent.com/50289067/90365134-5a253b00-e0a0-11ea-9e89-9af6d70a175a.png"></td>
     <td valign="top"><h2 style="font-size:18px;">재미있는 게임 느낌</h2>
-    <h4> start 버튼에 마우스를 가져다대면 흔들리는 애니메이션</span></h4>
+    <h4> start 버튼에 마우스를 가져다대면 흔들리는 애니메이션</h4>
+    <h4> 클릭하면 React Routing으로 다음 페이지로 넘어감</h4>
   </tr>
   <tr>
     <td valign="top"><img width="1200" alt="칵메2" src="https://user-images.githubusercontent.com/50289067/90365140-5db8c200-e0a0-11ea-876e-cff3969f854a.png"></td>
