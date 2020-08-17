@@ -53,3 +53,12 @@ css 모듈
 ## 데모영상
 https://catstanets.tistory.com/118
 
+
+
+
+##### 참고 및 사용한 소스
+1. 강의: https://www.udemy.com/share/101WbyB0ASc1xVQXQ=/ 
+- Udemy의 "React - The Complete Guide (incl Hooks, React Router, Redux)" by Maximilian Schwarzmüller 
+2. 아이콘 (Tropical Leaf & maracas)  <div>Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  3. css 디자인 (cup & ice cube)
+https://codepen.io/MarcMalignan/pen/svLux
