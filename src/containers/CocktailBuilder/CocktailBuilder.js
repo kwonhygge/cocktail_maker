@@ -76,13 +76,16 @@ class CocktailBuilder extends Component{
         
         for (let i in recipes){
             let foundRecipe=""
+            console.log(recipes[i]);
 
-            const array=Object.keys(recipes[i]).map(key=>{
+            const arrayToCompareIngredient=Object.keys(recipes[i]).map(key=>{
                 foundRecipe=key
                 return recipes[i][key]
             })
 
-            if (JSON.stringify(array[0])===JSON.stringify(this.state.ingredients)){
+            console.log(array);
+
+            if (JSON.stringify(arrayToCompareIngredient[0])===JSON.stringify(this.state.ingredients)){
                 this.setState({foundRecipe:foundRecipe})
             }
         }
